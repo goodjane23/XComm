@@ -31,6 +31,10 @@ namespace XComm
             {
                 commentTxt.Text += label1.Text + " " + authorizationCbx.Text + ", ";
             };
+            if (sblChk.IsNotEmpty())
+            {
+                commentTxt.Text += $"{sblChk.Text}, ";
+            }
             if (losChk.IsNotEmpty())
             {
                 commentTxt.Text += $"{losChk.Text}, ";
@@ -50,22 +54,29 @@ namespace XComm
 
             if (errorLineCbx.IsNotEmpty())
             {
-                if (errorsLineLbl.Text == "Линия")
+                if (fttxRbtn.Checked)
                 {
-                    commentTxt.Text += errorsLineLbl.Text + " " + errorLineCbx.Text + ", ";
+                    if (errorLineCbx.SelectedIndex == 1)
+                    {
+                        if (upChk.Checked)
+                        {
+                            commentTxt.Text += $"{errorsLineLbl.Text.ToLower()} {errorLineCbx.Text.ToLower()}, растут"; 
+                        }
+                        else
+                        {
+                            commentTxt.Text += $"{errorsLineLbl.Text.ToLower()} {errorLineCbx.Text.ToLower()}, не растут";
+                        }
+                    }
+
+                    if (errorLineCbx.SelectedIndex == 0)
+                    {
+                        commentTxt.Text += $"{errorsLineLbl.Text.ToLower()} {errorLineCbx.Text.ToLower()},";
+                    }
                 }
 
-                if (errorsLineLbl.Text == "Ошибки" && errorLineCbx.SelectedIndex == 0)
+                if (xdslRbtn.Checked)
                 {
-                    if (upChk.Checked)
-                    {
-                        commentTxt.Text += errorsLineLbl.Text + " " + errorLineCbx.Text + " , растут, ";
-                    }
-                    else commentTxt.Text += errorsLineLbl.Text + " " + errorLineCbx.Text + " , не растут, ";
-                }
-                if (errorsLineLbl.Text == "Ошибки" && errorLineCbx.SelectedIndex == 1)
-                {
-                    commentTxt.Text += errorsLineLbl.Text + " " + errorLineCbx.Text + ", ";
+                    commentTxt.Text += $"{errorsLineLbl.Text.ToLower()} {errorLineCbx.Text.ToLower()},";
                 }
             }
 

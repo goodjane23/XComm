@@ -71,6 +71,7 @@
             this.xponPanel = new System.Windows.Forms.Panel();
             this.rdxTxt = new System.Windows.Forms.TextBox();
             this.rdxLbl = new System.Windows.Forms.Label();
+            this.sblChk = new System.Windows.Forms.CheckBox();
             this.xdslPanel.SuspendLayout();
             this.xponPanel.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +90,7 @@
             // limitsChk
             // 
             this.limitsChk.AutoSize = true;
-            this.limitsChk.Location = new System.Drawing.Point(286, 58);
+            this.limitsChk.Location = new System.Drawing.Point(333, 57);
             this.limitsChk.Margin = new System.Windows.Forms.Padding(4);
             this.limitsChk.Name = "limitsChk";
             this.limitsChk.Size = new System.Drawing.Size(82, 21);
@@ -100,7 +101,7 @@
             // breaksChk
             // 
             this.breaksChk.AutoSize = true;
-            this.breaksChk.Location = new System.Drawing.Point(202, 57);
+            this.breaksChk.Location = new System.Drawing.Point(249, 57);
             this.breaksChk.Margin = new System.Windows.Forms.Padding(4);
             this.breaksChk.Name = "breaksChk";
             this.breaksChk.Size = new System.Drawing.Size(76, 21);
@@ -190,12 +191,14 @@
             // 
             // mongoErrorCbx
             // 
+            this.mongoErrorCbx.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.mongoErrorCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mongoErrorCbx.FormattingEnabled = true;
             this.mongoErrorCbx.Items.AddRange(new object[] {
             "есть",
             "нет",
-            "незначительны"});
+            "незначительны",
+            "нет данных по монго"});
             this.mongoErrorCbx.Location = new System.Drawing.Point(687, 248);
             this.mongoErrorCbx.Margin = new System.Windows.Forms.Padding(4);
             this.mongoErrorCbx.Name = "mongoErrorCbx";
@@ -512,10 +515,21 @@
             this.rdxLbl.TabIndex = 0;
             this.rdxLbl.Text = "Затухание";
             // 
+            // sblChk
+            // 
+            this.sblChk.AutoSize = true;
+            this.sblChk.Location = new System.Drawing.Point(141, 58);
+            this.sblChk.Name = "sblChk";
+            this.sblChk.Size = new System.Drawing.Size(101, 21);
+            this.sblChk.TabIndex = 70;
+            this.sblChk.Text = "Стабильна";
+            this.sblChk.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1021, 641);
+            this.Controls.Add(this.sblChk);
             this.Controls.Add(this.xponPanel);
             this.Controls.Add(this.addToDocBtn);
             this.Controls.Add(this.notifyBtn);
@@ -610,6 +624,7 @@
         private System.Windows.Forms.Panel xponPanel;
         private System.Windows.Forms.TextBox rdxTxt;
         private System.Windows.Forms.Label rdxLbl;
+        private System.Windows.Forms.CheckBox sblChk;
     }
 }
 
